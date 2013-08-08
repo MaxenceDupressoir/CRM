@@ -1,0 +1,13 @@
+CRM\CoreBundle\Entity\OrderType:
+    type: entity
+    table: order_type
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 250
+            nullable: false

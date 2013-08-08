@@ -1,0 +1,34 @@
+CRM\CoreBundle\Entity\Physic:
+    type: entity
+    table: physic
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        height:
+            type: integer
+            nullable: true
+        weight:
+            type: integer
+            nullable: true
+        hair:
+            type: string
+            length: 255
+            nullable: true
+        chest:
+            type: integer
+            nullable: true
+        cup:
+            type: integer
+            nullable: true
+        waist:
+            type: integer
+            nullable: true
+        hips:
+            type: integer
+            nullable: true
+        feet:
+            type: integer
+            nullable: true

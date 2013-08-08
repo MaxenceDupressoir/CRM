@@ -1,0 +1,41 @@
+{% extends 'CRMBackBundle::login_layout.html.twig' %}
+
+{% block page_title %}
+    <h4>{{ 'security.login.title'|trans({}, 'security')|raw }}</h4>
+{% endblock %}
+{% block fos_user_content %}
+
+    {% if error %}
+        <div>{{ error|trans }}</div>
+    {% endif %}
+
+
+    <form action="{{ path("fos_user_security_check") }}" method="post" class="login-form">
+
+        <div class="control-group">
+            <input type="text" id="username" name="_username" class="login-field" placeholder="{{ 'security.login.username'|trans({}, 'security') }}" value="{{ last_username }}" required="required" />
+            <label for="username" class="login-field-icon icon-user"></label>
+        </div>
+
+        <div class="control-group">
+            <input type="password" id="password" class="login-field" placeholder="{{ 'security.login.password'|trans({}, 'security') }}" name="_password" required="required" />
+            <label for="password" class="login-field-icon icon-lock"></label>
+        </div>
+
+
+        <div class="control-group">
+            <label for="remember_me" class="text">
+                {{ 'remember_me'|trans({}, 'security') }}
+                <input class="ace-switch ace-switch-6" type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <span class="lbl"></span>
+            </label>
+        </div>
+
+        <input type="submit" id="_submit" class="btn btn-primary btn-large btn-block" name="_submit" value="{{ 'security.login.submit'|trans({}, 'security') }}" />
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    </form>
+    <div class="btn btn-primary btn-block btn-large">
+        <a class="forgot-password-link" href="{{ path('fos_user_resetting_request') }}">{{ 'lost_password'|trans({}, 'security') }}</a>
+        <a class="register-link" href="{{ path('fos_user_registration_register') }}">{{ 'register'|trans({}, 'security') }}</a>
+    </div>
+{% endblock fos_user_content %}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}CRM{% endblock %}</title>
+        <meta name="description" content="This is page-header (.page-header &gt; h1)" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {% block stylesheets %}
+            {% stylesheets filter='cssrewrite' output='main.css'
+                'bundles/crmback/css/bootstrap.min.css'
+                'bundles/crmback/css/bootstrap-responsive.min.css'
+                'bundles/crmback/css/font-awesome.min.css'
+                'bundles/crmback/css/prettify.css'
+                'bundles/crmback/css/w8.css'
+                'bundles/crmback/css/w8-responsive.min.css'
+                'bundles/crmback/css/w8-skins.min.css'
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" media="screen"/>
+            {% endstylesheets %}
+        {% endblock %}
+        <!--fonts-->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+        <!--[if lt IE 9]>
+        <script src="dist/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+            {% include 'CRMBackBundle:Layout:header.html.twig' %}
+        </header>
+
+        <section>
+            <div class="container-fluid" id="main-container">
+                <a id="menu-toggler" href="#">
+                    <span></span>
+                </a>
+                <aside>
+                    {% include 'CRMBackBundle:Layout:sidebar.html.twig' %}
+                </aside>
+
+                <div id="main-content" class="clearfix">
+                    {% include 'CRMBackBundle:Layout:breadcrumbs.html.twig' %}
+                    <div id="page-content" class="clearfix">
+                        <div class="page-header position-relative">
+                            <h1>
+                                {% block page_title %}
+                                {% endblock %}
+                                <small>
+                                    <i class="icon-double-angle-right"></i>
+                                    {% block page_subtitle %}
+                                    {% endblock %}
+                                </small>
+                            </h1>
+                        </div><!--/.page-header-->
+                        <div class="row-fluid">
+                            {% block content %}
+                                {{ block('fos_user_content') }}
+                            {% endblock %}
+                        </div><!--/row-->
+
+                    </div><!--/#page-content-->
+
+                    <div id="ace-settings-container">
+                        <div class="btn btn-app btn-mini btn-warning" id="ace-settings-btn">
+                            <i class="icon-cog"></i>
+                        </div>
+
+                        <div id="ace-settings-box">
+                            <div>
+                                <div class="pull-left">
+                                    <select id="skin-colorpicker" class="hidden">
+                                        <option data-class="default" value="#438EB9">#438EB9</option>
+                                        <option data-class="skin-1" value="#222A2D">#222A2D</option>
+                                        <option data-class="skin-2" value="#C6487E">#C6487E</option>
+                                        <option data-class="skin-3" value="#D0D0D0">#D0D0D0</option>
+                                    </select>
+                                </div>
+                                <span>&nbsp; Choose Skin</span>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" class="ace-checkbox-2" id="ace-settings-header" />
+                                <label class="lbl" for="ace-settings-header"> Fixed Header</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" class="ace-checkbox-2" id="ace-settings-sidebar" />
+                                <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+                            </div>
+                        </div>
+                    </div><!--/#ace-settings-container-->
+                </div><!--/#main-content-->
+            </div><!--/.fluid-container#main-container-->
+        </section>
+
+        <a href="#" id="btn-scroll-up" class="btn btn-small btn-inverse">
+            <i class="icon-double-angle-up icon-only bigger-110"></i>
+        </a>
+
+        <section class='modals'>
+            {% block modals %}
+                {% include 'CRMBackBundle:Layout:confirmBox.html.twig' %}
+            {% endblock %}
+        </section>
+
+        {% block javascripts %}
+            {% javascripts output='main.js'
+                'bundles/crmback/js/jquery-2.0.3.min.js'
+                'bundles/crmback/js/bootstrap.min.js'
+                'bundles/crmback/js/jquery-ui-1.10.3.custom.min.js'
+                'bundles/crmback/js/jquery.slimscroll.min.js'
+                'bundles/crmback/js/jquery.easy-pie-chart.min.js'
+                'bundles/crmback/js/jquery.sparkline.min.js'
+                'bundles/crmback/js/jquery.flot.min.js'
+                'bundles/crmback/js/jquery.flot.pie.min.js'
+                'bundles/crmback/js/jquery.flot.resize.min.js'
+                'bundles/crmback/js/w8-elements.min.js'
+                'bundles/crmback/js/w8.min.js'
+                'bundles/crmback/js/smile.jquery.confirmBox.js'
+                'bundles/crmback/js/common.js'
+            %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>

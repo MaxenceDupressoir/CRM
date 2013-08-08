@@ -1,0 +1,156 @@
+.login {
+    background: url("../img/backgrounds/escheresque_ste.png");
+    color: #ffffff;
+    margin-bottom: 77px;
+    padding: 38px 38px 267px;
+    position: relative;
+}
+.login-box {
+    width: 375px;
+    margin: 0 auto;
+    min-height: 317px;
+    padding: 123px 199px 33px 306px;
+}
+
+.login-icon {
+    float: left;
+    margin-left: -200px;
+    width: 150px;
+}
+.login-icon > i {
+    font-size: 10em;
+}
+.login-icon > h4 {
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 34px;
+    opacity: 0.95;
+    filter: alpha(opacity=95);
+}
+.login-icon > h4 small {
+    color: inherit;
+    display: block;
+    font-size: inherit;
+    font-weight: 700;
+}
+.login-form {
+    margin-bottom: 0;
+    background-color: #edeff1;
+    padding: 24px 23px 20px;
+    position: relative;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px 6px 0 0;
+}
+.login-form:before {
+    content: '';
+    border-style: solid;
+    border-width: 12px 12px 12px 0;
+    border-color: transparent #edeff1 transparent transparent;
+    height: 0;
+    position: absolute;
+    left: -12px;
+    top: 35px;
+    width: 0;
+    -webkit-transform: rotate(360deg);
+}
+.login-form .control-group {
+    margin-bottom: 6px;
+    position: relative;
+}
+.login-form .login-field {
+    border-color: transparent;
+    font-size: 17px;
+    padding-bottom: 11px;
+    padding-top: 11px;
+    text-indent: 3px;
+    width: 299px;
+    margin-bottom: 10px !important;
+    border: 2px solid #bdc3c7;
+    color: #34495e;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    padding: 8px 5px;
+    height: 21px;
+    text-indent: 6px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border .25s linear, color .25s linear;
+    -moz-transition: border .25s linear, color .25s linear;
+    -o-transition: border .25s linear, color .25s linear;
+    transition: border .25s linear, color .25s linear;
+    -webkit-backface-visibility: hidden;
+}
+.login-form .control-group input:focus {
+    border-color: #2283c5;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.login-form .control-group label.text {
+    color: #393939;
+}
+.login-form .login-field:focus + .login-field-icon {
+    color: #2283c5;
+}
+.login-form .login-field-icon {
+    color: #bfc9ca;
+    font-size: 16px;
+    position: absolute;
+    right: 26px;
+    top: 12px;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden;
+}
+.login-box > .btn-primary {
+    border-radius: 0 0 6px 6px!important;
+    cursor: default;
+}
+.login-box > .btn-primary:hover {
+    background: #2283c5!important;
+}
+.register-link{
+    float: right;
+    color: #bfc9ca;
+    font-size: 13px;
+    text-align: center;
+}
+.forgot-password-link{
+    float: left;
+    color: #bfc9ca;
+    font-size: 13px;
+    text-align: center;
+}
+
+.login-box .btn.btn-large {
+    font-size: 16.996px;
+    line-height: 20px;
+    padding: 12px 18px 13px;
+}
+.login-box .btn {
+    border: none;
+    color: #ffffff;
+    padding: 9px 12px 10px;
+    line-height: 22px;
+    text-decoration: none;
+    text-shadow: none;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden
+}

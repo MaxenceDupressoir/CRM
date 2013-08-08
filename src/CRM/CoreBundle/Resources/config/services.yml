@@ -1,0 +1,8 @@
+parameters:
+    crm_core.form.type.customer.class: CRM\CoreBundle\Form\Type\CustomerType
+
+services:
+    crm_core.form.type.customer:
+        class: %crm_core.form.type.customer.class%
+        tags:
+            - { name: form.type, alias: customer }

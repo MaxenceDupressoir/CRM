@@ -1,0 +1,17 @@
+CRM\CoreBundle\Entity\Agenda:
+    type: entity
+    table: agenda
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 250
+            nullable: true
+    oneToMany:
+        appointments:
+          targetEntity: Appointment
+          mappedBy: product

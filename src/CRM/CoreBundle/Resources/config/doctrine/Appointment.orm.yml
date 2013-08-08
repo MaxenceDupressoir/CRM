@@ -1,0 +1,22 @@
+CRM\CoreBundle\Entity\Appointment:
+    type: entity
+    table: appointment
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 250
+            nullable: false
+        hourStart:
+            type: time
+            nullable: false
+        hourEnd:
+            type: time
+            nullable: true
+        date:
+            type: date
+            nullable: false

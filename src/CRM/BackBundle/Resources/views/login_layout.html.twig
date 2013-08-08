@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="description" content="This is page-header (.page-header &gt; h1)" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {% block stylesheets %}
+            {% stylesheets filter='cssrewrite' output='main.css'
+            'bundles/crmback/css/bootstrap.min.css'
+            'bundles/crmback/css/bootstrap-responsive.min.css'
+            'bundles/crmback/css/font-awesome.min.css'
+            'bundles/crmback/css/w8.css'
+            'bundles/crmback/css/style.css'
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" media="screen"/>
+            {% endstylesheets %}
+        {% endblock %}
+        <!--fonts-->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+        <!--[if lt IE 9]>
+        <script src="dist/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body class="login">
+
+        <div class="login-box">
+            <div class="login-icon">
+                <i class="icon-cloud"></i>
+                {% block page_title %}
+                    <h4>{{ 'login_title'|trans({}, 'security')|raw }}</h4>
+                {% endblock %}
+            </div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+
+
+    </body>
+</html>

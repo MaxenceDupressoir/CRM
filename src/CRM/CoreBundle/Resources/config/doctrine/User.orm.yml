@@ -1,0 +1,21 @@
+CRM\CoreBundle\Entity\User:
+    type: entity
+    table: user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 250
+            nullable: true
+        firstName:
+            type: string
+            length: 250
+            nullable: true
+        avatar:
+            type: string
+            length: 255
+            nullable: true

@@ -1,0 +1,32 @@
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+                {% for error in errors %}
+                    <span class="help-block">
+                        {{
+                            error.messagePluralization is null
+                            ? error.messageTemplate|trans(error.messageParameters, 'validators')
+                            : error.messageTemplate|transchoice(error.messagePluralization, error.messageParameters, 'validators')
+                        }}
+                    </span>
+                {% endfor %}
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}
+
+{% block form_row %}
+    {% spaceless %}
+        {% set type = type|default('text') %}
+        <div class="control-group">
+            <input type="{{ type }}" {{ block('widget_attributes') }} class="login-field" placeholder="{{ label|trans({}, 'security') }}" {% if value is not empty %} value="{{ value }}" {% endif %}/>
+            {% if label == "form.username" %}
+                <label for="{{ id }}" class="login-field-icon icon-user"></label>
+            {% elseif label == 'form.email' %}
+                <label for="{{ id }}" class="login-field-icon icon-envelope"></label>
+            {% elseif label == 'form.password' or label == 'form.password_confirmation' %}
+                <label for="{{ id }}" class="login-field-icon icon-lock"></label>
+            {% endif %}
+            {{ form_errors(form) }}
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}

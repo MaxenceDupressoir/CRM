@@ -1,0 +1,7 @@
+parameters:
+#    crm_back.example.class: CRM\BackBundle\Example
+
+services:
+#    crm_back.example:
+#        class: %crm_back.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

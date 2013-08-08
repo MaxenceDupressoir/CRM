@@ -1,0 +1,17 @@
+customer:
+    customer: 'Client|Clients'
+    index: Liste des clients
+    new: Ajouter un client
+    name: Nom
+    email: Adresse email
+    newsLetter: Abonné à la news letter
+    type: Catégorie
+    status: Statut
+    orders: Commandes
+    tabs:
+        profile : Profile
+        activity : Activité
+    delete:
+        confirm:
+            title: Suppresion d'un client
+            content: Etes vous sur de vouloir supprimer ce client ?

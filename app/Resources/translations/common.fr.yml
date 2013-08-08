@@ -1,0 +1,10 @@
+header:
+    title: Solenne J CRM
+
+sidebar:
+    dashboard: Tableau de bord
+    customer: Clients
+customer: Clients
+dashboard:
+    title: Tableau de bord
+    subtitle: Indicateurs

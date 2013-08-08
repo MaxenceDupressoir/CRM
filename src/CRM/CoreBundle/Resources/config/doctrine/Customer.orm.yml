@@ -1,0 +1,59 @@
+CRM\CoreBundle\Entity\Customer:
+    type: entity
+    table: customer
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 250
+            nullable: true
+        firstName:
+            type: string
+            length: 250
+            nullable: true
+        email:
+            type: string
+            length: 255
+            nullable: true
+        phone:
+            type: integer
+            length: 10
+            nullable: true
+        landLine:
+            type: integer
+            length: 10
+            nullable: true
+        newsLetter:
+            type: boolean
+            nullable: false
+            default: false
+    manyToOne:
+        address:
+            targetEntity: Address
+            joinColumn:
+                name: address_id
+                referencedColumnName: id
+        type:
+            targetEntity: CustomerType
+            joinColumn:
+                name: customer_type_id
+                referencedColumnName: id
+        status:
+            targetEntity: Status
+            joinColumn:
+                name: status_id
+                referencedColumnName: id
+    oneToOne:
+        physic:
+            targetEntity: Physic
+            joinColumn:
+                name: physic_id
+                referencedColumnName: id
+    oneToMany:
+        orders:
+            targetEntity: Order
+            mappedBy: customer

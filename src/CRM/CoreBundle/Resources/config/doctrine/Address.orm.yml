@@ -1,0 +1,37 @@
+CRM\CoreBundle\Entity\Address:
+    type: entity
+    table: address
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        flatFlor:
+            type: string
+            lenght: 250
+            nullable: true
+        building:
+            type: string
+            lenght: 250
+            nullable: true
+        numberAndStreet:
+            type: string
+            length: 250
+            nullable: false
+        postBox:
+            type: string
+            length: 250
+            nullable: true
+        zipCode:
+            type: string
+            length: 255
+            nullable: false
+        town:
+            type: string
+            length: 255
+            nullable: false
+        country:
+            type: string
+            length: 255
+            nullable: false

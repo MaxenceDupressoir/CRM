@@ -1,0 +1,21 @@
+{% extends 'CRMBackBundle::login_layout.html.twig' %}
+
+{% form_theme form 'CRMBackBundle:Layout:Form/bootstrap.login.html.twig' %}
+{% trans_default_domain 'security' %}
+
+{% block page_title %}
+    <h4>{{ 'registration.title'|trans|raw }}</h4>
+{% endblock %}
+
+{% block fos_user_content %}
+
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register login-form">
+        {{ form_widget(form) }}
+        <div>
+            <input type="submit" id="_submit" class="btn btn-primary btn-large btn-block" name="_submit" value="{{ 'registration.submit'|trans({}, 'security') }}" />
+        </div>
+    </form>
+    <div class="btn btn-primary btn-block btn-large">
+        <a class="forgot-password-link" href="{{ path('fos_user_security_login') }}">{{ 'registration.login'|trans}}</a>
+    </div>
+{% endblock fos_user_content %}

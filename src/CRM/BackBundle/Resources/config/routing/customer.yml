@@ -1,0 +1,22 @@
+crm_customer_index:
+    pattern:  /
+    defaults: { _controller: CRMBackBundle:Customer:index }
+
+crm_customer_view:
+    pattern:  /view/{id}
+    defaults: { _controller: CRMBackBundle:Customer:view }
+
+crm_customer_new:
+    pattern:  /new
+    defaults: { _controller: CRMBackBundle:Customer:new }
+
+crm_customer_update:
+    pattern:  /update/{id}
+    defaults: { _controller: CRMBackBundle:Customer:update }
+
+crm_customer_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: CRMBackBundle:Customer:delete }
+    requirements:
+        _method: POST
+

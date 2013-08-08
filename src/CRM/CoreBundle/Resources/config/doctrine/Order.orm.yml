@@ -1,0 +1,25 @@
+CRM\CoreBundle\Entity\Order:
+    type: entity
+    table: command
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 250
+            nullable: false
+    manyToOne:
+        type:
+            targetEntity: OrderType
+            joinColumn:
+                name: order_type_id
+                referencedColumnName: id
+        customer:
+            targetEntity: Customer
+            joinColumn:
+                name: customer_id
+                referencedColumnName: id
+            inversedBy: orders

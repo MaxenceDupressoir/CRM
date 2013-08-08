@@ -1,0 +1,15 @@
+{% extends 'CRMBackBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ 'customer.index'|trans({}, 'common')|raw }}
+{% endblock %}
+
+{% block page_title %}
+    {{ 'customer'|trans({}, 'common') }}
+{% endblock %}
+{% block page_subtitle %}
+    {{ 'customer.index'|trans({}, 'customer') }}
+{% endblock %}
+{% block content %}
+    {% include 'CRMBackBundle:Customer:form.html.twig' %}
+{% endblock %}

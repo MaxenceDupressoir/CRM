@@ -1,0 +1,13 @@
+CRM\CoreBundle\Entity\Status:
+    type: entity
+    table: status
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 250
+            nullable: false

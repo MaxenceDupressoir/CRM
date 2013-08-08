@@ -1,0 +1,59 @@
+<div id="sidebar">
+    <div id="sidebar-shortcuts">
+        <div id="sidebar-shortcuts-large">
+            <button class="btn btn-small btn-success">
+                <i class="icon-signal"></i>
+            </button>
+            <button class="btn btn-small btn-info">
+                <i class="icon-pencil"></i>
+            </button>
+            <button class="btn btn-small btn-warning">
+                <i class="icon-group"></i>
+            </button>
+            <button class="btn btn-small btn-danger">
+                <i class="icon-cogs"></i>
+            </button>
+        </div>
+        <div id="sidebar-shortcuts-mini">
+            <span class="btn btn-success"></span>
+            <span class="btn btn-info"></span>
+            <span class="btn btn-warning"></span>
+            <span class="btn btn-danger"></span>
+        </div>
+    </div><!--#sidebar-shortcuts-->
+
+    <ul class="nav nav-list">
+        <li {% if 'crm_back_homepage' in app.request.attributes.get('_route') %}class="active"{% endif %} >
+            <a href="{{ path('crm_back_homepage') }}">
+                <i class="icon-dashboard"></i>
+                <span>{{ 'sidebar.dashboard'|trans({}, 'common') }}</span>
+            </a>
+        </li>
+        <li {% if 'crm_customer' in app.request.attributes.get('_route') %}class="active"{% endif %}>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-group"></i>
+                <span>{{ 'sidebar.customer'|trans({}, 'common') }}</span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <li {% if 'crm_customer_index' in app.request.attributes.get('_route') %}class="active"{% endif %}>
+                    <a href="{{ path('crm_customer_index') }}">
+                        <i class="icon-double-angle-right"></i>
+                        {{ 'customer.index'|trans({}, 'customer') }}
+                    </a>
+                </li>
+                <li {% if 'crm_customer_new' in app.request.attributes.get('_route') %}class="active"{% endif %}>
+                    <a href="{{ path('crm_customer_new') }}">
+                        <i class="icon-double-angle-right"></i>
+                        {{ 'customer.new'|trans({}, 'customer') }}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul><!--/.nav-list-->
+
+    <div id="sidebar-collapse">
+        <i class="icon-double-angle-left"></i>
+    </div>
+</div>

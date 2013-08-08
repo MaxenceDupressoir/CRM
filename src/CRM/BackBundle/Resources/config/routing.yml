@@ -1,0 +1,6 @@
+crm_back_homepage:
+    pattern:  /
+    defaults: { _controller: CRMBackBundle:Home:index }
+crm_customer:
+    resource: "@CRMBackBundle/Resources/config/routing/customer.yml"
+    prefix:   /customer
