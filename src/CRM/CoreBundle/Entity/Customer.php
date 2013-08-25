@@ -30,6 +30,11 @@ class Customer
     private $email;
 
     /**
+     * @var string
+     */
+    private $avatar;
+
+    /**
      * @var integer
      */
     private $phone;
@@ -59,6 +64,33 @@ class Customer
      */
     private $type;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $orders;
+
+    /**
+     * @var \CRM\CoreBundle\Entity\Status
+     */
+    private $status;
+
+    /**
+     * @var File
+     */
+    private $file;
+
+    /**
+     * @var
+     */
+    private $uploadDir;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->orders = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -137,6 +169,29 @@ class Customer
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set avatar
+     *
+     * @param string $avatar
+     * @return Customer
+     */
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    /**
+     * Get avatar
+     *
+     * @return string
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
     }
 
     /**
@@ -276,24 +331,7 @@ class Customer
     {
         return $this->type;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $orders;
 
-    /**
-     * @var \CRM\CoreBundle\Entity\Status
-     */
-    private $status;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->orders = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
     /**
      * Add orders
      *
@@ -348,5 +386,45 @@ class Customer
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * @param \CRM\CoreBundle\Entity\File $file
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * @return \CRM\CoreBundle\Entity\File
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param mixed $uploadDir
+     */
+    public function setUploadDir($uploadDir)
+    {
+        $this->uploadDir = $uploadDir;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUploadDir()
+    {
+        return $this->uploadDir;
+    }
+
+    /**
+     * Return avatar path from web directory
+     */
+    public function getWebAvatar()
+    {
+        return '/'.$this->getUploadDir().'/'.$this->avatar;
     }
 }

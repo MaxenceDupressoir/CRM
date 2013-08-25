@@ -15,6 +15,10 @@ CRM\CoreBundle\Entity\Customer:
             type: string
             length: 250
             nullable: true
+        avatar:
+            type: string
+            length: 255
+            nullable: true
         email:
             type: string
             length: 255
@@ -31,6 +35,10 @@ CRM\CoreBundle\Entity\Customer:
             type: boolean
             nullable: false
             default: false
+        uploadDir:
+            type: string
+            length: 255
+            nullable: true
     manyToOne:
         address:
             targetEntity: Address

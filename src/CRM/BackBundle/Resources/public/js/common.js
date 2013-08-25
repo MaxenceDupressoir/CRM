@@ -29,6 +29,39 @@ $(function() {
         });
     })
 
+    $('input[type=file]').file_input({
+        style:'well',
+        btn_choose:'Drop files here or click to choose',
+        btn_change:null,
+        //no_icon:'icon-cloud-upload',
+        no_icon:'icon-picture',
+        droppable:true,
+        thumbnail:'small',
+        whitelist:'gif|png|jpg|jpeg',
+        before_change: function(files, dropped) {
+            return files;
+        }
+        //,icon_remove:null//set null, to hide remove/reset button
+        /**,before_remove : function() {
+        * return true;
+        * }*/
+        ,
+        preview_error : function(filename, error_code) {
+            //name of the file that failed
+            //error_code values
+            //1 = 'FILE_LOAD_FAILED',
+            //2 = 'IMAGE_LOAD_FAILED',
+            //3 = 'THUMBNAIL_FAILED'
+            //alert(error_code);
+        }
+
+    }).on('change', function(){
+            //console.log($(this).data('ace_input_files'));
+            //console.log($(this).data('ace_input_method'));
+    })
+
+
+
     $('.sparkline').each(function(){
         var $box = $(this).closest('.infobox');
         var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';

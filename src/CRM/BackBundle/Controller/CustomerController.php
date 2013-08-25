@@ -67,13 +67,16 @@ class CustomerController extends Controller
 
         if ($request->getMethod() == 'POST') {
             if ($form->handleRequest($request)->isValid()) {
+
+                $customer->getFile()->move(__DIR__.'/../../../../web/'.$this->container->getParameter('avatar_dir'), $customer->getFile()->getClientOriginalName());
+
+                $customer->setUploadDir($this->container->getParameter('avatar_dir'));
+                $customer->setAvatar($customer->getFile()->getClientOriginalName());
                 $em->persist($customer);
                 $em->flush();
 
                 $this->get('session')->getFlashBag()->add('notice','customer_created');
                 return $this->redirect($this->generateUrl('crm_customer_view', array('id' => $customer->getId())));
-            }else {
-                var_dump($form->getErrors());
             }
         }
 

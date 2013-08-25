@@ -29,16 +29,9 @@
         </li>
 
         <li class="">
-            <a data-toggle="tab" href="#friends">
-                <i class="blue icon-group bigger-120"></i>
-                Friends
-            </a>
-        </li>
-
-        <li class="">
             <a data-toggle="tab" href="#pictures">
-                <i class="pink icon-picture bigger-120"></i>
-                Pictures
+                <i class="blue icon-group bigger-120"></i>
+                {{ 'customer.tabs.pictures'|trans({}, 'customer') }}
             </a>
         </li>
     </ul>
@@ -48,7 +41,7 @@
     <div class="row-fluid">
         <div class="span3 center">
             <span class="profile-picture">
-                <img class="editable" alt="Alex's Avatar" id="avatar2" src="profile-pic.jpg">
+                <img class="editable" alt="Alex's Avatar" src="{{ customer.webAvatar }}">
             </span>
 
             <div class="space space-4"></div>
@@ -58,9 +51,9 @@
                 Add as a friend
             </a>
 
-            <a href="http://192.69.216.111/themes/preview/ace/profile.html#" class="btn btn-small btn-block btn-primary">
+            <a href="#" class="btn btn-small btn-block btn-primary">
                 <i class="icon-envelope-alt"></i>
-                Send a message
+                {{ 'customer.send.mail'|trans({}, 'customer') }}
             </a>
         </div><!--/span-->
 
@@ -69,7 +62,7 @@
                 <span class="middle">{{ customer.name ~ ' ' ~ customer.firstName }}</span>
                 <span class="label label-purple arrowed-in-right">
                     <i class="icon-circle smaller-80"></i>
-                    online
+                    {{ customer.status }}
                 </span>
             </h4>
 

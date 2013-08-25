@@ -15,3 +15,5 @@ customer:
         confirm:
             title: Suppresion d'un client
             content: Etes vous sur de vouloir supprimer ce client ?
+    send:
+        mail: Envoyer un mail

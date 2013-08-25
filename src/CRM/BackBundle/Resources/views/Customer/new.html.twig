@@ -1,5 +1,5 @@
 {% extends 'CRMBackBundle::layout.html.twig' %}
-
+{% form_theme form 'CRMBackBundle:Layout:Form/bootstrap.default.html.twig' %}
 {% block title %}
     {{ 'customer.new'|trans({}, 'customer')|raw }}
 {% endblock %}

@@ -8,3 +8,6 @@ customer: Clients
 dashboard:
     title: Tableau de bord
     subtitle: Indicateurs
+
+confirm: Confirmer
+cancel: Annuler

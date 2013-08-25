@@ -68,3 +68,7 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: CRM\CoreBundle\Entity\User
+
+parameters:
+    avatar_dir: uploads/avatar
+
